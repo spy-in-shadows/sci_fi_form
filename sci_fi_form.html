@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Core Neural Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: #020a1a url('https://www.transparenttextures.com/patterns/stardust.png');
+            color: #00e5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-shadow: 0 0 5px rgba(0, 229, 255, 0.5);
+        }
+        form {
+            max-width: 500px;
+            width: 100%;
+            margin: 40px;
+            padding: 30px 35px;
+            background: rgba(10, 23, 56, 0.6);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.8s ease-out;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            border-radius: 4px;
+            font-size: 1rem;
+            background: rgba(0, 229, 255, 0.05);
+            color: #f0f8ff;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #00e5ff;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+            outline: none;
+            background: rgba(0, 229, 255, 0.1);
+        }
+        label, legend {
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+        fieldset {
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            border-radius: 4px;
+            padding: 15px;
+            margin: 0 0 20px 0;
+        }
+        legend {
+            padding: 0 10px;
+            width: auto;
+            border: none;
+        }
+        fieldset label {
+            display: block;
+            font-weight: 400;
+            margin-bottom: 12px;
+            text-transform: none;
+            letter-spacing: 0;
+            color: #cdeeff;
+            cursor: pointer;
+            position: relative;
+            padding-left: 35px;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            opacity: 0;
+            position: absolute;
+        }
+        fieldset label::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #00e5ff;
+            background: rgba(0, 229, 255, 0.1);
+            transition: all 0.3s;
+        }
+        input[type="radio"] + label::before {
+             border-radius: 50%;
+        }
+        input[type="checkbox"]:checked + label::before {
+            background: #00e5ff;
+            box-shadow: 0 0 10px #00e5ff;
+        }
+        input[type="radio"]:checked + label::before {
+            background: #00e5ff;
+            box-shadow: 0 0 10px #00e5ff;
+        }
+        input[type="file"] {
+            color: #cdeeff;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            background: transparent;
+            color: #00e5ff;
+            border: 2px solid #00e5ff;
+            padding: 14px 0;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        input[type="submit"]:hover {
+            background: #00e5ff;
+            color: #020a1a;
+            box-shadow: 0 0 25px #00e5ff;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="get">
+        <label for="name">Operator ID / Callsign</label>
+        <input type="text" name="name" id="name" placeholder="Cmdr. GOTA">
+        
+        <label for="email">Subspace Comms Channel</label>
+        <input type="email" name="email" id="email" placeholder="ramapper_newring@adypu.hypernet.galaxy">
+        
+        <label for="password">Neural-Link Access Key</label>
+        <input type="password" name="password" id="password" placeholder="●●●●●●●●●●">
+        
+        <label for="age">Service Cycles</label>
+        <input type="number" name="age" id="age" placeholder="e.g., 150">
+        
+        <label for="designation">Designation / Model</label>
+        <select name="designation" id="designation">
+            <option value="">[Select Designation]</option>
+            <option value="human">Human (Organic)</option>
+            <option value="cyborg">Cyborg (Enhanced)</option>
+            <option value="android">Android (Synthetic)</option>
+            <option value="sentient_ai">Sentient A.I.</option>
+        </select>
+        
+        <label for="image_input">Upload Biometric Scan</label>
+        <input type="file" name="image_input" id="image_input">
+        
+        <fieldset>
+            <legend>Combat Proficiencies</legend>
+            <input type="checkbox" name="skills" value="zerog" id="skill1"><label for="skill1">Zero-G Piloting</label>
+            <input type="checkbox" name="skills" value="laser" id="skill2"><label for="skill2">Laser Weaponry</label>
+            <input type="checkbox" name="skills" value="hacking" id="skill3"><label for="skill3">System Hacking</label>
+            <input type="checkbox" name="skills" value="psionics" id="skill4"><label for="skill4">Psionic Abilities</label>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Energy Credit Stipend</legend>
+            <input type="radio" name="income" value="tier1" id="tier1"><label for="tier1">< 1M Credits</label>
+            <input type="radio" name="income" value="tier2" id="tier2"><label for="tier2">1M - 5M Credits</label>
+            <input type="radio" name="income" value="tier3" id="tier3"><label for="tier3">5M - 20M Credits</label>
+            <input type="radio" name="income" value="tier4" id="tier4"><label for="tier4">> 20M Credits (Corporate)</label>
+        </fieldset>
+        
+        <input type="submit" value="Transmit Data">
+    </form>
+</body>
+</html>
